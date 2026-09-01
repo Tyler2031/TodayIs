@@ -1,0 +1,848 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-01",
+  "notes": "Starter dataset. Dates are best-effort and SHOULD be verified against a canonical source before shipping. `date` = fixed month/day. `rule` = floating (nth weekday of a month). Exactly one of `date` or `rule` must be present.",
+  "weekdayConvention": "1=Sunday ... 7=Saturday (matches Foundation.Calendar). ordinal 1..5 = nth; ordinal -1 = last.",
+  "observances": [
+    {
+      "id": "new-years-day",
+      "title": "New Year's Day",
+      "blurb": "The first page of a 365-page book. Write a good one.",
+      "category": "general",
+      "date": { "month": 1, "day": 1 },
+      "tags": ["holiday"],
+      "priority": 90,
+      "source": ""
+    },
+    {
+      "id": "national-hangover-day",
+      "title": "National Hangover Day",
+      "blurb": "Observed responsibly, from a dark room, under a blanket.",
+      "category": "adult",
+      "date": { "month": 1, "day": 1 },
+      "tags": ["humor", "drinking"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-spaghetti-day",
+      "title": "National Spaghetti Day",
+      "blurb": "A saucy classic. Twirl, don't cut.",
+      "category": "general",
+      "date": { "month": 1, "day": 4 },
+      "tags": ["food"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-bird-day",
+      "title": "National Bird Day",
+      "blurb": "A day to appreciate our feathered neighbors.",
+      "category": "general",
+      "date": { "month": 1, "day": 5 },
+      "tags": ["wildlife"],
+      "priority": 55,
+      "source": ""
+    },
+    {
+      "id": "national-bubble-bath-day",
+      "title": "National Bubble Bath Day",
+      "blurb": "Warm water, too many bubbles, zero regrets.",
+      "category": "general",
+      "date": { "month": 1, "day": 8 },
+      "tags": ["self-care"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-clean-off-your-desk-day",
+      "title": "National Clean Off Your Desk Day",
+      "blurb": "Second Monday in January. Archaeology begins under the coffee mugs.",
+      "category": "funny",
+      "rule": { "month": 1, "weekday": 2, "ordinal": 2 },
+      "tags": ["humor", "office"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-hat-day",
+      "title": "National Hat Day",
+      "blurb": "Top it off however you like.",
+      "category": "general",
+      "date": { "month": 1, "day": 15 },
+      "tags": ["fashion"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-popcorn-day",
+      "title": "National Popcorn Day",
+      "blurb": "The only crop that applauds itself while cooking.",
+      "category": "general",
+      "date": { "month": 1, "day": 19 },
+      "tags": ["food"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-cheese-lovers-day",
+      "title": "National Cheese Lover's Day",
+      "blurb": "Gouda day for it.",
+      "category": "general",
+      "date": { "month": 1, "day": 20 },
+      "tags": ["food"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-hugging-day",
+      "title": "National Hugging Day",
+      "blurb": "Consensual squeezes only.",
+      "category": "general",
+      "date": { "month": 1, "day": 21 },
+      "tags": ["wellness"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-opposite-day",
+      "title": "National Opposite Day",
+      "blurb": "This blurb is completely useless and you should read every word.",
+      "category": "funny",
+      "date": { "month": 1, "day": 25 },
+      "tags": ["humor"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-have-fun-at-work-day",
+      "title": "National Have Fun at Work Day",
+      "blurb": "Management-approved chaos, for one day only.",
+      "category": "funny",
+      "date": { "month": 1, "day": 28 },
+      "tags": ["humor", "office"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "groundhog-day",
+      "title": "Groundhog Day",
+      "blurb": "A rodent does meteorology. We just accept this.",
+      "category": "general",
+      "date": { "month": 2, "day": 2 },
+      "tags": ["holiday", "wildlife"],
+      "priority": 70,
+      "source": ""
+    },
+    {
+      "id": "national-tater-tot-day",
+      "title": "National Tater Tot Day",
+      "blurb": "Small potatoes, big feelings.",
+      "category": "general",
+      "date": { "month": 2, "day": 2 },
+      "tags": ["food"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-send-a-card-to-a-friend-day",
+      "title": "Send a Card to a Friend Day",
+      "blurb": "Analog messaging. Surprisingly durable.",
+      "category": "general",
+      "date": { "month": 2, "day": 7 },
+      "tags": ["friendship"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-pizza-day",
+      "title": "National Pizza Day",
+      "blurb": "A food group shaped like a stop sign that no one obeys.",
+      "category": "general",
+      "date": { "month": 2, "day": 9 },
+      "tags": ["food"],
+      "priority": 55,
+      "source": ""
+    },
+    {
+      "id": "national-umbrella-day",
+      "title": "National Umbrella Day",
+      "blurb": "Portable roof. Chronically forgotten.",
+      "category": "general",
+      "date": { "month": 2, "day": 10 },
+      "tags": ["everyday"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "valentines-day",
+      "title": "Valentine's Day",
+      "blurb": "Roses are red, this app is free.",
+      "category": "general",
+      "date": { "month": 2, "day": 14 },
+      "tags": ["holiday"],
+      "priority": 85,
+      "source": ""
+    },
+    {
+      "id": "national-singles-awareness-day",
+      "title": "Singles Awareness Day",
+      "blurb": "February 15: half-price chocolate and total freedom.",
+      "category": "adult",
+      "date": { "month": 2, "day": 15 },
+      "tags": ["humor"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-random-acts-of-kindness-day",
+      "title": "Random Acts of Kindness Day",
+      "blurb": "Be suspiciously nice to someone today.",
+      "category": "general",
+      "date": { "month": 2, "day": 17 },
+      "tags": ["wellness"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-margarita-day",
+      "title": "National Margarita Day",
+      "blurb": "Salt, lime, and questionable Tuesday-night decisions.",
+      "category": "adult",
+      "date": { "month": 2, "day": 22 },
+      "tags": ["drinking", "humor"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-tortilla-chip-day",
+      "title": "National Tortilla Chip Day",
+      "blurb": "The load-bearing member of any nacho.",
+      "category": "general",
+      "date": { "month": 2, "day": 24 },
+      "tags": ["food"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-pig-day",
+      "title": "National Pig Day",
+      "blurb": "Smarter than your dog. Discuss.",
+      "category": "general",
+      "date": { "month": 3, "day": 1 },
+      "tags": ["wildlife"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-employee-appreciation-day",
+      "title": "Employee Appreciation Day",
+      "blurb": "First Friday in March. The pizza party has entered the chat.",
+      "category": "general",
+      "rule": { "month": 3, "weekday": 6, "ordinal": 1 },
+      "tags": ["office"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-oreo-day",
+      "title": "National Oreo Day",
+      "blurb": "Twist, lick, dunk. The ancient ritual.",
+      "category": "general",
+      "date": { "month": 3, "day": 6 },
+      "tags": ["food"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-pi-day",
+      "title": "Pi Day",
+      "blurb": "3.14 and infinitely more. Eat pie about it.",
+      "category": "general",
+      "date": { "month": 3, "day": 14 },
+      "tags": ["science", "food"],
+      "priority": 65,
+      "source": ""
+    },
+    {
+      "id": "st-patricks-day",
+      "title": "St. Patrick's Day",
+      "blurb": "Wear green or get pinched. Those are the rules.",
+      "category": "general",
+      "date": { "month": 3, "day": 17 },
+      "tags": ["holiday"],
+      "priority": 80,
+      "source": ""
+    },
+    {
+      "id": "national-let-it-go-day",
+      "title": "National Let It Go Day",
+      "blurb": "Release one grudge. Keep the receipts, though.",
+      "category": "funny",
+      "date": { "month": 3, "day": 23 },
+      "tags": ["humor", "wellness"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-something-on-a-stick-day",
+      "title": "Something on a Stick Day",
+      "blurb": "Corndogs, kebabs, popsicles. The stick unites us.",
+      "category": "funny",
+      "date": { "month": 3, "day": 28 },
+      "tags": ["food", "humor"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-pencil-day",
+      "title": "National Pencil Day",
+      "blurb": "The original undo button.",
+      "category": "general",
+      "date": { "month": 3, "day": 30 },
+      "tags": ["everyday"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "april-fools-day",
+      "title": "April Fools' Day",
+      "blurb": "Trust no headline, no coworker, and no coffee.",
+      "category": "funny",
+      "date": { "month": 4, "day": 1 },
+      "tags": ["holiday", "humor"],
+      "priority": 75,
+      "source": ""
+    },
+    {
+      "id": "national-burrito-day",
+      "title": "National Burrito Day",
+      "blurb": "First Thursday in April. A blanket, but for lunch.",
+      "category": "general",
+      "rule": { "month": 4, "weekday": 5, "ordinal": 1 },
+      "tags": ["food"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-beer-day",
+      "title": "National Beer Day",
+      "blurb": "Hops to it.",
+      "category": "adult",
+      "date": { "month": 4, "day": 7 },
+      "tags": ["drinking"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-grilled-cheese-day",
+      "title": "National Grilled Cheese Day",
+      "blurb": "Two ingredients, infinite comfort.",
+      "category": "general",
+      "date": { "month": 4, "day": 12 },
+      "tags": ["food"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-that-sucks-day",
+      "title": "National That Sucks Day",
+      "blurb": "A sanctioned day to complain. You've earned it.",
+      "category": "funny",
+      "date": { "month": 4, "day": 15 },
+      "tags": ["humor"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "earth-day",
+      "title": "Earth Day",
+      "blurb": "Our only planet with pizza. Take care of it.",
+      "category": "general",
+      "date": { "month": 4, "day": 22 },
+      "tags": ["environment"],
+      "priority": 75,
+      "source": ""
+    },
+    {
+      "id": "national-pigs-in-a-blanket-day",
+      "title": "National Pigs in a Blanket Day",
+      "blurb": "Tiny sausages, tucked in, living their best life.",
+      "category": "general",
+      "date": { "month": 4, "day": 24 },
+      "tags": ["food"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-tell-a-story-day",
+      "title": "Tell a Story Day",
+      "blurb": "Bonus points if it starts with 'so there I was.'",
+      "category": "general",
+      "date": { "month": 4, "day": 27 },
+      "tags": ["creativity"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-star-wars-day",
+      "title": "Star Wars Day",
+      "blurb": "May the 4th be with you.",
+      "category": "general",
+      "date": { "month": 5, "day": 4 },
+      "tags": ["pop-culture"],
+      "priority": 70,
+      "source": ""
+    },
+    {
+      "id": "cinco-de-mayo",
+      "title": "Cinco de Mayo",
+      "blurb": "Guac is extra. It's always been extra.",
+      "category": "general",
+      "date": { "month": 5, "day": 5 },
+      "tags": ["holiday", "food"],
+      "priority": 70,
+      "source": ""
+    },
+    {
+      "id": "national-lost-sock-memorial-day",
+      "title": "Lost Sock Memorial Day",
+      "blurb": "Pour one out for the ones the dryer took.",
+      "category": "funny",
+      "date": { "month": 5, "day": 9 },
+      "tags": ["humor"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "mothers-day",
+      "title": "Mother's Day",
+      "blurb": "Second Sunday in May. Call your mom.",
+      "category": "general",
+      "rule": { "month": 5, "weekday": 1, "ordinal": 2 },
+      "tags": ["holiday", "family"],
+      "priority": 85,
+      "source": ""
+    },
+    {
+      "id": "national-devil-food-cake-day",
+      "title": "National Devil's Food Cake Day",
+      "blurb": "Chocolate, but make it sinister.",
+      "category": "general",
+      "date": { "month": 5, "day": 19 },
+      "tags": ["food"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-wine-day",
+      "title": "National Wine Day",
+      "blurb": "You're not fancy, you're just hydrating with intent.",
+      "category": "adult",
+      "date": { "month": 5, "day": 25 },
+      "tags": ["drinking", "humor"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-donut-day",
+      "title": "National Donut Day",
+      "blurb": "First Friday in June. A pastry with a plot hole.",
+      "category": "general",
+      "rule": { "month": 6, "weekday": 6, "ordinal": 1 },
+      "tags": ["food"],
+      "priority": 55,
+      "source": ""
+    },
+    {
+      "id": "national-best-friends-day",
+      "title": "Best Friends Day",
+      "blurb": "Text the person who knows where the bodies are buried.",
+      "category": "general",
+      "date": { "month": 6, "day": 8 },
+      "tags": ["friendship"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-flip-flop-day",
+      "title": "National Flip Flop Day",
+      "blurb": "The official footwear of giving up.",
+      "category": "funny",
+      "date": { "month": 6, "day": 20 },
+      "tags": ["humor", "summer"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "fathers-day",
+      "title": "Father's Day",
+      "blurb": "Third Sunday in June. Accept the grill tongs graciously.",
+      "category": "general",
+      "rule": { "month": 6, "weekday": 1, "ordinal": 3 },
+      "tags": ["holiday", "family"],
+      "priority": 85,
+      "source": ""
+    },
+    {
+      "id": "national-selfie-day",
+      "title": "National Selfie Day",
+      "blurb": "Arm's length. Good light. No notes.",
+      "category": "general",
+      "date": { "month": 6, "day": 21 },
+      "tags": ["pop-culture"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-sunglasses-day",
+      "title": "National Sunglasses Day",
+      "blurb": "Indoors is a personal choice.",
+      "category": "general",
+      "date": { "month": 6, "day": 27 },
+      "tags": ["summer"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-social-media-day",
+      "title": "Social Media Day",
+      "blurb": "Celebrate by logging off for an hour. Wild, we know.",
+      "category": "general",
+      "date": { "month": 6, "day": 30 },
+      "tags": ["pop-culture"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "independence-day",
+      "title": "Independence Day (USA)",
+      "blurb": "Hot dogs, sparklers, and one dog hiding under the bed.",
+      "category": "general",
+      "date": { "month": 7, "day": 4 },
+      "tags": ["holiday"],
+      "priority": 85,
+      "source": ""
+    },
+    {
+      "id": "world-emoji-day",
+      "title": "World Emoji Day",
+      "blurb": "The calendar emoji shows July 17. Now you know why.",
+      "category": "general",
+      "date": { "month": 7, "day": 17 },
+      "tags": ["pop-culture"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-hot-dog-day",
+      "title": "National Hot Dog Day",
+      "blurb": "Third Wednesday in July. Sandwich? Taco? Let's not.",
+      "category": "general",
+      "rule": { "month": 7, "weekday": 4, "ordinal": 3 },
+      "tags": ["food"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-tequila-day",
+      "title": "National Tequila Day",
+      "blurb": "One is a celebration. Three is a personality change.",
+      "category": "adult",
+      "date": { "month": 7, "day": 24 },
+      "tags": ["drinking", "humor"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-dance-day",
+      "title": "National Dance Day",
+      "blurb": "Third Saturday in September. No skill required, only enthusiasm.",
+      "category": "general",
+      "rule": { "month": 9, "weekday": 7, "ordinal": 3 },
+      "tags": ["arts", "fitness"],
+      "priority": 55,
+      "source": ""
+    },
+    {
+      "id": "national-friendship-day",
+      "title": "National Friendship Day",
+      "blurb": "First Sunday in August. Tag your ride-or-die.",
+      "category": "general",
+      "rule": { "month": 8, "weekday": 1, "ordinal": 1 },
+      "tags": ["friendship"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-book-lovers-day",
+      "title": "Book Lovers Day",
+      "blurb": "Your 'to be read' pile is now load-bearing.",
+      "category": "general",
+      "date": { "month": 8, "day": 9 },
+      "tags": ["reading"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-tell-a-joke-day",
+      "title": "Tell a Joke Day",
+      "blurb": "A groan counts as a laugh. We don't make the rules.",
+      "category": "funny",
+      "date": { "month": 8, "day": 16 },
+      "tags": ["humor"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-dog-day",
+      "title": "National Dog Day",
+      "blurb": "Every dog you meet today is a very good dog.",
+      "category": "general",
+      "date": { "month": 8, "day": 26 },
+      "tags": ["wildlife", "pets"],
+      "priority": 60,
+      "source": ""
+    },
+    {
+      "id": "national-wildlife-day",
+      "title": "National Wildlife Day",
+      "blurb": "A day to notice the neighbors with fur, fins, and feathers.",
+      "category": "general",
+      "date": { "month": 9, "day": 4 },
+      "tags": ["wildlife", "environment"],
+      "priority": 55,
+      "source": ""
+    },
+    {
+      "id": "national-read-a-book-day",
+      "title": "Read a Book Day",
+      "blurb": "Audiobooks count. Fight us.",
+      "category": "general",
+      "date": { "month": 9, "day": 6 },
+      "tags": ["reading"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "international-talk-like-a-pirate-day",
+      "title": "Talk Like a Pirate Day",
+      "blurb": "Arr. That's the whole brief.",
+      "category": "funny",
+      "date": { "month": 9, "day": 19 },
+      "tags": ["humor"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-coffee-day",
+      "title": "National Coffee Day",
+      "blurb": "The reason the rest of this list got made.",
+      "category": "general",
+      "date": { "month": 9, "day": 29 },
+      "tags": ["food", "drinks"],
+      "priority": 55,
+      "source": ""
+    },
+    {
+      "id": "national-taco-day",
+      "title": "National Taco Day",
+      "blurb": "Structurally unsound. Emotionally perfect.",
+      "category": "general",
+      "date": { "month": 10, "day": 4 },
+      "tags": ["food"],
+      "priority": 50,
+      "source": ""
+    },
+    {
+      "id": "national-boyfriend-day",
+      "title": "National Boyfriend Day",
+      "blurb": "Low bar, high praise. He remembered the trash night.",
+      "category": "adult",
+      "date": { "month": 10, "day": 3 },
+      "tags": ["humor", "relationships"],
+      "priority": 35,
+      "source": ""
+    },
+    {
+      "id": "national-dessert-day",
+      "title": "National Dessert Day",
+      "blurb": "The meal that skips straight to the point.",
+      "category": "general",
+      "date": { "month": 10, "day": 14 },
+      "tags": ["food"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-boss-day",
+      "title": "National Boss's Day",
+      "blurb": "The card at the office is circulating. Sign it. You know you will.",
+      "category": "funny",
+      "date": { "month": 10, "day": 16 },
+      "tags": ["office", "humor"],
+      "priority": 35,
+      "source": ""
+    },
+    {
+      "id": "national-pumpkin-day",
+      "title": "National Pumpkin Day",
+      "blurb": "It's been in everything since September. This is its moment.",
+      "category": "general",
+      "date": { "month": 10, "day": 26 },
+      "tags": ["food", "autumn"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "halloween",
+      "title": "Halloween",
+      "blurb": "Buy the good candy. You'll eat the leftovers and you know it.",
+      "category": "general",
+      "date": { "month": 10, "day": 31 },
+      "tags": ["holiday"],
+      "priority": 85,
+      "source": ""
+    },
+    {
+      "id": "national-sandwich-day",
+      "title": "National Sandwich Day",
+      "blurb": "Named after a guy who didn't want to leave the card table.",
+      "category": "general",
+      "date": { "month": 11, "day": 3 },
+      "tags": ["food"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-nachos-day",
+      "title": "National Nachos Day",
+      "blurb": "The bottom chips are a myth. There is no bottom.",
+      "category": "general",
+      "date": { "month": 11, "day": 6 },
+      "tags": ["food"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "world-kindness-day",
+      "title": "World Kindness Day",
+      "blurb": "Hold a door. Tip well. Let the merge happen.",
+      "category": "general",
+      "date": { "month": 11, "day": 13 },
+      "tags": ["wellness"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-button-day",
+      "title": "National Button Day",
+      "blurb": "That jar in the drawer finally gets its due.",
+      "category": "funny",
+      "date": { "month": 11, "day": 16 },
+      "tags": ["humor", "crafts"],
+      "priority": 30,
+      "source": ""
+    },
+    {
+      "id": "thanksgiving-us",
+      "title": "Thanksgiving (USA)",
+      "blurb": "Fourth Thursday in November. Pace yourself before the pie.",
+      "category": "general",
+      "rule": { "month": 11, "weekday": 5, "ordinal": 4 },
+      "tags": ["holiday", "family"],
+      "priority": 85,
+      "source": ""
+    },
+    {
+      "id": "national-cake-day",
+      "title": "National Cake Day",
+      "blurb": "Leftover pie is fine, but today we start fresh.",
+      "category": "general",
+      "date": { "month": 11, "day": 26 },
+      "tags": ["food"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-cookie-day",
+      "title": "National Cookie Day",
+      "blurb": "Milk is strongly encouraged but not mandatory.",
+      "category": "general",
+      "date": { "month": 12, "day": 4 },
+      "tags": ["food"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-ugly-sweater-day",
+      "title": "National Ugly Sweater Day",
+      "blurb": "Third Friday in December. The itchier, the better.",
+      "category": "funny",
+      "rule": { "month": 12, "weekday": 6, "ordinal": 3 },
+      "tags": ["humor", "holiday"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "national-cocoa-day",
+      "title": "National Cocoa Day",
+      "blurb": "Marshmallows are a load-bearing ingredient.",
+      "category": "general",
+      "date": { "month": 12, "day": 13 },
+      "tags": ["food", "winter"],
+      "priority": 40,
+      "source": ""
+    },
+    {
+      "id": "national-regifting-day",
+      "title": "National Regifting Day",
+      "blurb": "The candle set continues its long journey.",
+      "category": "funny",
+      "date": { "month": 12, "day": 18 },
+      "tags": ["humor", "holiday"],
+      "priority": 35,
+      "source": ""
+    },
+    {
+      "id": "festivus",
+      "title": "Festivus",
+      "blurb": "The airing of grievances is now open. Form a line.",
+      "category": "funny",
+      "date": { "month": 12, "day": 23 },
+      "tags": ["humor", "pop-culture"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "christmas-day",
+      "title": "Christmas Day",
+      "blurb": "Batteries not included. They never are.",
+      "category": "general",
+      "date": { "month": 12, "day": 25 },
+      "tags": ["holiday"],
+      "priority": 90,
+      "source": ""
+    },
+    {
+      "id": "national-champagne-day",
+      "title": "National Champagne Day",
+      "blurb": "Point the cork away from everyone you love.",
+      "category": "adult",
+      "date": { "month": 12, "day": 31 },
+      "tags": ["drinking", "humor"],
+      "priority": 45,
+      "source": ""
+    },
+    {
+      "id": "new-years-eve",
+      "title": "New Year's Eve",
+      "blurb": "The one night 'I'll just close my eyes for a bit' is not allowed.",
+      "category": "general",
+      "date": { "month": 12, "day": 31 },
+      "tags": ["holiday"],
+      "priority": 80,
+      "source": ""
+    }
+  ]
+}
