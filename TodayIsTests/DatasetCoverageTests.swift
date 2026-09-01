@@ -55,8 +55,10 @@ final class DatasetCoverageTests: XCTestCase {
             guard let d = obs.date else { continue }
             XCTAssertTrue((1...12).contains(d.month), "\(obs.id): month \(d.month) out of range")
             XCTAssertTrue((1...31).contains(d.day), "\(obs.id): day \(d.day) out of range")
-            // Reject e.g. Feb 30 (use a non-leap year as the strict check).
-            var comps = DateComponents(); comps.year = 2025; comps.month = d.month; comps.day = d.day
+            // Reject impossible dates like Feb 30. Feb 29 is legitimate, so probe a
+            // leap year for it and a non-leap year for everything else.
+            let probeYear = (d.month == 2 && d.day == 29) ? 2024 : 2025
+            var comps = DateComponents(); comps.year = probeYear; comps.month = d.month; comps.day = d.day
             XCTAssertNotNil(calendar.date(from: comps).flatMap {
                 calendar.component(.day, from: $0) == d.day ? $0 : nil
             }, "\(obs.id): \(d.month)/\(d.day) is not a real date")
