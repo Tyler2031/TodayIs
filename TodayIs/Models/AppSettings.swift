@@ -42,7 +42,7 @@ final class AppSettings: ObservableObject {
         set { set(newValue, forKey: Key.notifyMinute) }
     }
 
-    /// Whether the 18+ tab/content is available. Off by default.
+    /// Whether the After Hours tab is available. Off by default.
     var adultUnlocked: Bool {
         get { defaults.bool(forKey: Key.adultUnlocked) }
         set { set(newValue, forKey: Key.adultUnlocked) }

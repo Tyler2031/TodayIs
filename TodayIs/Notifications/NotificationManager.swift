@@ -98,20 +98,6 @@ final class NotificationManager: NSObject, ObservableObject {
         let ids = pending.map(\.identifier).filter { $0.hasPrefix(identifierPrefix) }
         center.removePendingNotificationRequests(withIdentifiers: ids)
     }
-
-    #if DEBUG
-    /// Fires a test notification ~5 seconds out using today's primary observance.
-    func sendTestNotification(settings: AppSettings, catalog: ObservanceCatalog) async {
-        guard let primary = catalog.primary(on: Date(), category: settings.notifyCategory)
-            ?? catalog.primary(on: Date(), category: .general) else { return }
-        let content = UNMutableNotificationContent()
-        content.title = "Today is \(primary.title)"
-        content.body = primary.blurb
-        content.sound = .default
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        try? await center.add(UNNotificationRequest(identifier: "todayis.test", content: content, trigger: trigger))
-    }
-    #endif
 }
 
 // MARK: - Foreground presentation

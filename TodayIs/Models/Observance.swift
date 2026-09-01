@@ -2,7 +2,8 @@ import Foundation
 
 // MARK: - Category
 
-/// Content buckets. `adult` is gated behind an explicit opt-in in Settings.
+/// Content buckets. `adult` (shown as "After Hours") is gated behind an explicit
+/// opt-in in Settings. Its raw value stays "adult" for dataset compatibility.
 enum ObservanceCategory: String, Codable, CaseIterable, Identifiable, Hashable {
     case general
     case funny
@@ -14,7 +15,7 @@ enum ObservanceCategory: String, Codable, CaseIterable, Identifiable, Hashable {
         switch self {
         case .general: return "General"
         case .funny:   return "Funny"
-        case .adult:   return "18+"
+        case .adult:   return "After Hours"
         }
     }
 

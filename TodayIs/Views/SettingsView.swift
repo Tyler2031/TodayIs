@@ -35,7 +35,7 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Toggle("Show 18+ tab", isOn: Binding(
+                    Toggle("Show the After Hours tab", isOn: Binding(
                         get: { settings.adultUnlocked },
                         set: { newValue in
                             if newValue { showAdultConfirm = true }
@@ -43,25 +43,16 @@ struct SettingsView: View {
                         }
                     ))
                 } header: {
-                    Text("Adult Content")
+                    Text("After Hours")
                 } footer: {
-                    Text("Adds an 18+ category with adult humor. Off by default and kept separate from the General and Funny tabs.")
+                    Text("Adds a set of observances with adult humor and drinking themes. Off by default and kept separate from the other tabs.")
                 }
-
-                #if DEBUG
-                Section("Developer") {
-                    Button("Send test notification (5s)") {
-                        Task { await notifications.sendTestNotification(settings: settings, catalog: catalog) }
-                    }
-                    Button("Re-arm scheduled notifications") {
-                        Task { await notifications.reschedule(settings: settings, catalog: catalog) }
-                    }
-                }
-                #endif
 
                 Section {
-                    LabeledContent("Observances in dataset", value: "\(catalog.all.count)")
-                    LabeledContent("Schema version", value: "1")
+                    LabeledContent("Version", value: appVersion)
+                    Link("Privacy Policy",
+                         destination: URL(string: "https://tyler2031.github.io/TodayIs/privacy.html")!)
+                        .tint(Color.plannerAccent)
                 }
             }
             .scrollContentBackground(.hidden)
@@ -84,11 +75,11 @@ struct SettingsView: View {
             .onChange(of: settings.notifyCategory) { _, _ in
                 Task { await notifications.reschedule(settings: settings, catalog: catalog) }
             }
-            .alert("Show 18+ content?", isPresented: $showAdultConfirm) {
-                Button("Cancel", role: .cancel) { }
-                Button("I'm 18 or older") { settings.adultUnlocked = true }
+            .alert("Show the After Hours tab?", isPresented: $showAdultConfirm) {
+                Button("Not now", role: .cancel) { }
+                Button("Show it") { settings.adultUnlocked = true }
             } message: {
-                Text("This unlocks a separate 18+ tab with adult humor. You can turn it off again anytime.")
+                Text("This adds observances with adult humor and drinking themes. You can turn it off again anytime.")
             }
         }
     }
@@ -100,6 +91,12 @@ struct SettingsView: View {
             second: 0,
             of: Date()
         ) ?? Date()
+    }
+
+    private var appVersion: String {
+        let v = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+        let b = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+        return "\(v) (\(b))"
     }
 }
 

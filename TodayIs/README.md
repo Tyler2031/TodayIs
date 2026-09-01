@@ -34,14 +34,14 @@ permission when you enable the toggle in the Settings tab. Uses iOS 17 APIs
 | `App/TodayIsApp.swift` | `@main`, injects env objects, re-arms notifications on `.active` |
 | `Models/Observance.swift` | `Observance`, `ObservanceCategory`, `FixedDate`, `FloatingRule`, decoding, date resolution |
 | `Models/ObservanceCatalog.swift` | Loads JSON, resolves dates per year, `observances(on:category:)`, `days(from:through:)`, `upcoming(...)` |
-| `Models/AppSettings.swift` | `@AppStorage`-backed prefs: notification on/off, time, featured category, 18+ unlock |
+| `Models/AppSettings.swift` | `@AppStorage`-backed prefs: notification on/off, time, featured category, After Hours unlock |
 | `Notifications/NotificationManager.swift` | Auth request + rolling 14-day pre-scheduled `UNCalendarNotificationTrigger`s |
 | `Views/RootView.swift` | `TabView`: Today / Calendar / Settings; paper-tinted tab bar |
 | `Views/PlannerTheme.swift` | Paper/ink/accent palette, `RuledPaper` background, reusable `PlannerPage`, `TagStrip` |
 | `Views/TodayView.swift` | Hosts `PlannerPage` for today with the category row |
 | `Views/BrowseView.swift` | Month-grid calendar; tap a day → its `PlannerPage`; dot marks days with a notable observance |
 | `Views/ObservanceDetailView.swift` | Paper-styled full blurb, tags, source link |
-| `Views/SettingsView.swift` | Notification controls, 18+ gate with confirm alert, debug tools |
+| `Views/SettingsView.swift` | Notification controls, After Hours gate with confirm alert, version + privacy link |
 
 ## Look
 
