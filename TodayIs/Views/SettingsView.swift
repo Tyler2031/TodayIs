@@ -64,7 +64,10 @@ struct SettingsView: View {
                     LabeledContent("Schema version", value: "1")
                 }
             }
+            .scrollContentBackground(.hidden)
+            .background(Color.paper.ignoresSafeArea())
             .navigationTitle("Settings")
+            .toolbarBackground(Color.paper, for: .navigationBar)
             .onAppear { notifyTime = timeFromSettings() }
             .onChange(of: notifyTime) { _, newValue in
                 let comps = Calendar.current.dateComponents([.hour, .minute], from: newValue)

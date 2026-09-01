@@ -36,12 +36,19 @@ permission when you enable the toggle in the Settings tab. Uses iOS 17 APIs
 | `Models/ObservanceCatalog.swift` | Loads JSON, resolves dates per year, `observances(on:category:)`, `days(from:through:)`, `upcoming(...)` |
 | `Models/AppSettings.swift` | `@AppStorage`-backed prefs: notification on/off, time, featured category, 18+ unlock |
 | `Notifications/NotificationManager.swift` | Auth request + rolling 14-day pre-scheduled `UNCalendarNotificationTrigger`s |
-| `Views/RootView.swift` | `TabView`: Today / Browse / Settings |
-| `Views/TodayView.swift` | Primary card + "Also today" list, category picker |
-| `Views/BrowseView.swift` | Date-anchored grouped list, `PRIMARY` badge, jump-to-date |
-| `Views/ObservanceDetailView.swift` | Full blurb, tags, source link |
+| `Views/RootView.swift` | `TabView`: Today / Calendar / Settings; paper-tinted tab bar |
+| `Views/PlannerTheme.swift` | Paper/ink/accent palette, `RuledPaper` background, reusable `PlannerPage`, `TagStrip` |
+| `Views/TodayView.swift` | Hosts `PlannerPage` for today with the category row |
+| `Views/BrowseView.swift` | Month-grid calendar; tap a day → its `PlannerPage`; dot marks days with a notable observance |
+| `Views/ObservanceDetailView.swift` | Paper-styled full blurb, tags, source link |
 | `Views/SettingsView.swift` | Notification controls, 18+ gate with confirm alert, debug tools |
-| `Views/CategoryPicker.swift` | Segmented picker limited to unlocked categories |
+
+## Look
+
+Paper-planner aesthetic: cream page, serif type, faint ruled lines with a terracotta
+margin rule, dark-mode aware. `Today` and each tapped calendar day render as a planner
+page (date header + the day's observances written as entries). All colors are code-defined
+in `PlannerTheme.swift` — no asset catalog, no bundled fonts (uses the system serif).
 
 ## JSON schema (`schemaVersion: 1`)
 

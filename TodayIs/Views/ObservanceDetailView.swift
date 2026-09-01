@@ -4,37 +4,54 @@ struct ObservanceDetailView: View {
     let observance: Observance
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                Text(observance.title)
-                    .font(.largeTitle.bold())
+        ZStack(alignment: .topLeading) {
+            Color.paper.ignoresSafeArea()
+            RuledPaper().ignoresSafeArea()
 
-                Label(observance.category.displayName, systemImage: "tag")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text(observance.category.displayName.uppercased())
+                        .font(.system(.caption, design: .serif)).tracking(3)
+                        .foregroundStyle(Color.plannerAccent)
 
-                if !observance.blurb.isEmpty {
-                    Text(observance.blurb)
-                        .font(.body)
-                }
+                    Text(observance.title)
+                        .font(.system(size: 30, weight: .semibold, design: .serif))
+                        .foregroundStyle(Color.ink)
+                        .fixedSize(horizontal: false, vertical: true)
 
-                if !observance.tags.isEmpty {
-                    TagStrip(tags: observance.tags)
-                }
+                    Rectangle().fill(Color.ink.opacity(0.22)).frame(height: 1)
 
-                if let source = observance.source, let url = URL(string: source), !source.isEmpty {
-                    Link(destination: url) {
-                        Label("Source", systemImage: "link")
+                    if !observance.blurb.isEmpty {
+                        Text(observance.blurb)
+                            .font(.system(.body, design: .serif))
+                            .foregroundStyle(Color.ink.opacity(0.8))
+                            .fixedSize(horizontal: false, vertical: true)
                     }
-                    .font(.footnote)
-                }
 
-                Spacer()
+                    if !observance.tags.isEmpty {
+                        TagStrip(tags: observance.tags).padding(.top, 4)
+                    }
+
+                    if let source = observance.source,
+                       let url = URL(string: source), !source.isEmpty {
+                        Link(destination: url) {
+                            Label("Source", systemImage: "link")
+                                .font(.system(.footnote, design: .serif))
+                        }
+                        .tint(Color.plannerAccent)
+                        .padding(.top, 4)
+                    }
+
+                    Spacer(minLength: 0)
+                }
+                .padding(.leading, 68)
+                .padding(.trailing, 24)
+                .padding(.vertical, 26)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding()
         }
         .navigationTitle(observance.title)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.paper, for: .navigationBar)
     }
 }
