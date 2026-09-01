@@ -56,7 +56,7 @@ final class NotificationManager: NSObject, ObservableObject {
 
         for offset in 0..<windowDays {
             guard let day = calendar.date(byAdding: .day, value: offset, to: today) else { continue }
-            let hits = catalog.observances(on: day, category: category)
+            let hits = catalog.slate(on: day, category: category).items
             guard let primary = hits.first else { continue }
 
             // Skip today if the fire time has already passed.

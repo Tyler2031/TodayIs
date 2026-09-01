@@ -103,6 +103,7 @@ struct BrowseView: View {
                         DayCell(
                             date: day,
                             isToday: cal.isDateInToday(day),
+                            hasEntry: !catalog.slate(on: day, category: category).items.isEmpty,
                             notable: isNotable(day)
                         )
                     }
@@ -153,6 +154,7 @@ struct BrowseView: View {
 private struct DayCell: View {
     let date: Date
     let isToday: Bool
+    let hasEntry: Bool
     let notable: Bool
 
     var body: some View {
@@ -161,8 +163,10 @@ private struct DayCell: View {
                 .font(.system(.callout, design: .serif))
                 .foregroundStyle(Color.ink)
             Circle()
-                .fill(notable ? Color.plannerAccent : Color.clear)
-                .frame(width: 5, height: 5)
+                .fill(notable ? Color.plannerAccent
+                      : hasEntry ? Color.ink.opacity(0.28)
+                      : Color.clear)
+                .frame(width: notable ? 6 : 4, height: notable ? 6 : 4)
         }
         .frame(maxWidth: .infinity, minHeight: 46)
         .background(RoundedRectangle(cornerRadius: 6).stroke(Color.ink.opacity(0.12), lineWidth: 1))

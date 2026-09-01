@@ -66,9 +66,12 @@ struct PlannerPage: View {
     @EnvironmentObject private var settings: AppSettings
     @EnvironmentObject private var catalog: ObservanceCatalog
 
-    private var hits: [Observance] { catalog.observances(on: date, category: category) }
+    private var slate: (items: [Observance], isFallback: Bool) {
+        catalog.slate(on: date, category: category)
+    }
 
     var body: some View {
+        let hits = slate.items
         ZStack(alignment: .topLeading) {
             Color.paper.ignoresSafeArea()
             RuledPaper().ignoresSafeArea()
@@ -77,6 +80,12 @@ struct PlannerPage: View {
                 VStack(alignment: .leading, spacing: 20) {
                     header
                     if showsCategoryPicker { categoryRow }
+
+                    if slate.isFallback {
+                        Text("No \(category.displayName) entry today — showing the general observance.")
+                            .font(.system(.caption, design: .serif)).italic()
+                            .foregroundStyle(Color.ink.opacity(0.45))
+                    }
 
                     if let primary = hits.first {
                         entry(primary, isPrimary: true)

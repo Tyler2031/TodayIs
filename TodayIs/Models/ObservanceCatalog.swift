@@ -74,6 +74,17 @@ final class ObservanceCatalog: ObservableObject {
         observances(on: day, category: category).first
     }
 
+    /// Never-empty slate for a day: the category's own observances, or the
+    /// `general` slate as a fallback when that category has nothing that day.
+    /// `isFallback` is true when the returned items are the general fallback.
+    func slate(on day: Date, category: ObservanceCategory) -> (items: [Observance], isFallback: Bool) {
+        let direct = observances(on: day, category: category)
+        if !direct.isEmpty || category == .general {
+            return (direct, false)
+        }
+        return (observances(on: day, category: .general), true)
+    }
+
     /// Grouped day-by-day results across a date range (inclusive), skipping empty days.
     func days(from startDay: Date, through endDay: Date, category: ObservanceCategory) -> [DayObservances] {
         let start = calendar.startOfDay(for: startDay)
