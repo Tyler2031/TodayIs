@@ -114,9 +114,9 @@ final class DatasetCoverageTests: XCTestCase {
         XCTAssertGreaterThan(covered, 0, "No general-category coverage at all — something is wrong with loading/resolution.")
     }
 
-    /// Strict gate — flip the `XCTSkip` off once the dataset targets full coverage.
+    /// Strict gate: every calendar day in the current year must have at least one
+    /// general-category observance. Enforced now that the dataset targets full coverage.
     func testEveryDayHasAGeneralObservance() throws {
-        try XCTSkipIf(true, "Starter dataset is intentionally partial. Remove this skip when aiming for 365-day coverage.")
         let gaps = missingDays(for: .general)
         XCTAssertTrue(gaps.isEmpty, "Days with no general observance: \(gaps.map { $0.formatted(.dateTime.month().day()) })")
     }

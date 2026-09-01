@@ -107,26 +107,29 @@ What the tests check:
   dates, `rule` fields in range, every entry resolves for the current year.
 - **Resolver correctness:** floating rules checked against known 2026 dates (Thanksgiving,
   Mother's/Father's Day, last-Monday, last-Friday).
-- **`testGeneralCoverageReport`** — informational; prints every day of the current year
-  with no `general` observance and the covered/total count. Does not fail while the
-  dataset is partial.
-- **`testEveryDayHasAGeneralObservance`** — the strict 365-day gate, `XCTSkip`-ped for
-  now. Remove the skip line once you're aiming for full coverage.
+- **`testGeneralCoverageReport`** — informational; prints the covered/total count and any
+  days of the current year with no `general` observance.
+- **`testEveryDayHasAGeneralObservance`** — strict gate: fails if any calendar day lacks a
+  `general` observance. Enforced (no longer skipped).
 
-## Expanding the dataset to 365+
+## Dataset status
 
-The starter file has ~80 entries across all 12 months and all three categories, including
-several `rule`-based floating days. To reach full coverage:
+~417 entries (378 `general`, 23 `funny`, 16 `adult`). Every calendar day, including
+Feb 29, has at least one fixed-date `general` observance, so the General tab is never
+empty. Floating US holidays (MLK Day, Memorial Day, Thanksgiving, etc.) are `rule`-based
+entries with high `priority` so they win their day.
 
-- **Verify dates.** The starter dates are best-effort. Cross-check against a canonical
-  list before shipping; fix `month`/`day` or convert to a `rule`.
-- **Fill gaps.** Aim for ≥1 `general` observance per calendar day. `funny` and `adult`
-  are "mixed in" — they don't need full coverage.
+**Before shipping:**
+
+- **Verify dates and origin facts.** Blurbs state real-sounding origins and dates; these
+  are best-effort and should be cross-checked against a canonical source. Fix `month`/`day`
+  or convert to a `rule` as needed.
+- **Tune `priority`** for busy days (major holidays 80–90, notable 50–65, minor food days
+  30–45).
 - **Keep `id` stable.** It's the notification key and any future favoriting will rely on it.
-- **Set `priority` deliberately** for busy days (major holidays 80–90, fun mid-tier 40–55).
-- **Lint idea:** a quick script that resolves every entry for the current year and prints
-  days with zero `general` coverage. `ObservanceCatalog.days(from:through:category:)` over a
-  full year is enough to build that check in a unit test.
+- **Tone:** `general` is fact-first with an occasional dry aside on minor days; somber days
+  (Veterans Day, Memorial Day, Patriot Day, MLK, Juneteenth) stay plain. `funny`/`adult`
+  lead with a fact and keep humor mild.
 
 ## Not in v1 (by design)
 

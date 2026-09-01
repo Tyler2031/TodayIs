@@ -15,6 +15,7 @@ let package = Package(
         .target(
             name: "TodayIsCore",
             path: "TodayIs",
+            exclude: ["App", "Views", "Notifications", "README.md"],
             sources: ["Models"],
             resources: [.process("Resources/observances.json")]
         ),
