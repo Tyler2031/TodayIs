@@ -1,0 +1,33 @@
+# XcodeGen spec for the iOS app. On the Mac:
+#   brew install xcodegen
+#   xcodegen generate
+#   open TodayIs.xcodeproj      # then Cmd-R
+#
+# Regenerate whenever you add source files. The .xcodeproj is disposable (gitignored).
+# Logic tests run separately from the repo root with `swift test`.
+
+name: TodayIs
+options:
+  bundleIdPrefix: com.tyler
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+targets:
+  TodayIs:
+    type: application
+    platform: iOS
+    sources:
+      - path: TodayIs
+        excludes:
+          - "README.md"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tyler.TodayIs
+        MARKETING_VERSION: "0.1"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: true
+        INFOPLIST_KEY_CFBundleDisplayName: TodayIs
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1"

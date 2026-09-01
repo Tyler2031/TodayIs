@@ -4,18 +4,28 @@ A tiny offline iOS app: every day it surfaces one or more "national day" observa
 shows today's front and center, lets you browse other dates, and fires a daily local
 notification. No backend, no accounts. All data ships in `Resources/observances.json`.
 
-## Adding these files to an Xcode project
+## Making the Xcode project
 
-1. Create a new Xcode project → **App** → SwiftUI, name it `TodayIs`, min iOS 17
-   (uses `ContentUnavailableView`, `onChange(of:_:)` two-param form, `@Observable`-free
-   `ObservableObject`). Delete the generated `ContentView.swift` and `TodayIsApp.swift`.
-2. Drag the `App`, `Models`, `Notifications`, `Views`, `Resources` folders into the
-   project navigator. Check **Copy items if needed** and **Create groups**.
-3. Confirm `observances.json` appears in **Target → Build Phases → Copy Bundle Resources**.
-4. Notifications: no special capability is required for *local* notifications, but add a
-   usage rationale if you later add provisional auth. First launch will prompt when the
-   user enables the toggle in Settings.
-5. Build & run. Enable "Send a daily notification" in the Settings tab to schedule.
+**Recommended — XcodeGen** (from the repo root, on macOS):
+
+```sh
+brew install xcodegen
+xcodegen generate
+open TodayIs.xcodeproj      # then Cmd-R
+```
+
+`project.yml` defines the app target (iOS 17, `TodayIs/` as sources, `observances.json`
+auto-bundled as a resource). The `.xcodeproj` is disposable and gitignored — rerun
+`xcodegen generate` whenever you add files.
+
+**Manual alternative:** new Xcode project → **App** → SwiftUI, name `TodayIs`, min iOS 17.
+Delete the generated `ContentView.swift` / `TodayIsApp.swift`, drag in the `App`, `Models`,
+`Notifications`, `Views`, `Resources` folders (**Copy items if needed**, **Create groups**),
+and confirm `observances.json` is in **Target → Build Phases → Copy Bundle Resources**.
+
+Either way: local notifications need no special capability. First launch prompts for
+permission when you enable the toggle in the Settings tab. Uses iOS 17 APIs
+(`ContentUnavailableView`, two-parameter `onChange(of:_:)`).
 
 ## File map
 
